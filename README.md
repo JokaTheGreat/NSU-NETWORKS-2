@@ -1,8 +1,8 @@
-##About
+## About
 :yum: :yum:
-##Usage
+## Usage
 
-###Build
+### Build
 ./gradlew shadowjar
 
 ### Run
