@@ -3,7 +3,7 @@
 ## Usage
 
 ### Build
-./gradlew shadowjar
+> ./gradlew shadowjar
 
 ### Run
 > java -jar Server/build/libs/Server.jar [ port ]
