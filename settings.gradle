@@ -1,0 +1,4 @@
+rootProject.name = 'Net2.3'
+include 'Server'
+include 'Client'
+include 'MyFTProtocol'
