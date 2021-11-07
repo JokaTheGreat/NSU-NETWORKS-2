@@ -1,8 +1,11 @@
 import java.io.File;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 class SpeedLoger implements Runnable {
     public static final int UPDATE_PERIOD = 3;
     public static final int BYTES_IN_KILOBYTE = 1024;
+    private static final Logger LOGGER = LoggerFactory.getLogger(SpeedLoger.class);
 
     private long callCounter = 0;
     private long oldFileSize = 0;
@@ -22,8 +25,8 @@ class SpeedLoger implements Runnable {
         long instantSpeed = (newFileSize - oldFileSize) / (UPDATE_PERIOD * callCounter);
         long averageSpeed = newFileSize / (UPDATE_PERIOD * callCounter);
 
-        System.out.println(fileName + " instant download speed: " + instantSpeed / BYTES_IN_KILOBYTE + " kb/s");
-        System.out.println(fileName + " average download speed: " + averageSpeed / BYTES_IN_KILOBYTE + " kb/s");
+        LOGGER.info(fileName + " instant download speed: " + instantSpeed / BYTES_IN_KILOBYTE + " kb/s");
+        LOGGER.info(fileName + " average download speed: " + averageSpeed / BYTES_IN_KILOBYTE + " kb/s");
 
         oldFileSize = newFileSize;
     }
