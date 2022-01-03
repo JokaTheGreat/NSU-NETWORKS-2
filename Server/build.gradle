@@ -1,0 +1,22 @@
+plugins {
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+}
+
+application {
+    mainClass = 'Main'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':MyFTProtocol')
+}
+
+shadowJar {
+    archiveBaseName.set('Server')
+    archiveClassifier.set('')
+    archiveVersion.set('')
+}
